@@ -1,0 +1,4 @@
+function [DB_optimized] = optimizeDataBase(DB,inputArg2)
+
+end
+
