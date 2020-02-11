@@ -2,7 +2,7 @@
 
 %% Read in image and databse
 load('database.mat');
-Img = imread('DB (221).jpg');
+Img = imread('DB (149).jpg');
 Img = im2double(Img);
 
 %Dark Image
@@ -13,7 +13,7 @@ Img_Portrait = im2double(imread('DB (247).jpg'));
 Img_Landscape = im2double(imread('DB (9).jpg'));
 
 %% resize Image and convert to lab
-Resized_Img = imresize(Img,[6000,8000],'bicubic');
+Resized_Img = imresize(Img,[4000,3000],'bicubic');
 Lab_Img = rgb2lab(Resized_Img);
 
 
@@ -54,8 +54,17 @@ end
 
 %% find error in images
 
-[peaksnr, snr] = psnr(Resized_Img, recreatedImg)
-  
+%[~,snr] = psnr(recreatedImg,Resized_Img);
+%[recHvs] =HsvFunc(recreatedImg);
+
+
+%%
+
+%E_dither = sqrt((Resized_Img(:,:,1)-recHvs(:,:,1)).^2 +(Resized_Img(:,:,2)-recHvs(:,:,2)).^2 +(Resized_Img(:,:,3)-recHvs(:,:,3)).^2);
+
+%mean = (1/(width*height))*sum(sum(E_dither));
+
+
 
 
 
