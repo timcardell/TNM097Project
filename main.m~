@@ -18,7 +18,7 @@ Lab_Img = rgb2lab(Resized_Img);
 
 %% optimize database
 
-optimizeDataBase125 = optimizeDataBase(img_lab)
+optimizeDataBase125 = optimizeDataBase(img_Lab, im_resized);
 
 
 

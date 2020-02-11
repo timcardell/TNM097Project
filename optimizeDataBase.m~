@@ -1,4 +1,9 @@
-function [DB_optimized] = optimizeDataBase(DB,inputArg2)
+
+%input img_lab, im_resized
+function [DB_optimized] = optimizeDataBase(DBLab, DBrgb)
+
+D
+
 
 end
 
