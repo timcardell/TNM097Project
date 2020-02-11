@@ -1,10 +1,10 @@
 function [meanIntensity] = MeanFunc(inImg)
 
     [height,width,~] = size(inImg);
-inImg
+
         k = 1;
-        for i = 1:height
-            for j = 1:width
+        for i = 1:25:height
+            for j = 1:25:width
                 
                    vectY = i:i+25-1;
                    vectX = j:j+25-1;

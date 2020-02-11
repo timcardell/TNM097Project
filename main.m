@@ -11,9 +11,9 @@ Lab_Img = RGB2Lab(Resized_Img);
 
 %% Calculate mean of given section of image
 
-    MeanImage = MeanFunc(Lab_Img);
+    %MeanImage = MeanFunc(Lab_Img);
     DatabaseArray = (cell2mat(img_lab));
-    MeanImageTiles = MeanFunc(DatabaseArray);
+    MeanImageTiles = MeanFunc(DatabaseArray)
 
 %% Compare mean images
 index = CalcDiff(MeanImage,MeanImageTiles);
