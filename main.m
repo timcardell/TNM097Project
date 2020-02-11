@@ -2,11 +2,18 @@
 
 %% Read in image and databse
 load('database.mat');
-Img = imread('DB (73).jpg');
+Img = imread('DB (221).jpg');
 Img = im2double(Img);
 
+%Dark Image
+Img_Dark = im2double(imread('DB (239).jpg'));
+%Portrait Image
+Img_Portrait = im2double(imread('DB (247).jpg'));
+%Landscape Image
+Img_Landscape = im2double(imread('DB (9).jpg'));
+
 %% resize Image and convert to lab
-Resized_Img = imresize(Img,[4000,3000],'bicubic');
+Resized_Img = imresize(Img,[6000,8000],'bicubic');
 Lab_Img = rgb2lab(Resized_Img);
 
 
@@ -43,9 +50,12 @@ for i = 1:tilewidth:width
 end
     imshow(recreatedImg)
     figure
-    imshow(Img)
+    imshow(Resized_Img)
 
+%% find error in images
 
+[peaksnr, snr] = psnr(Resized_Img, recreatedImg)
+  
 
 
 
