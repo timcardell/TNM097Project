@@ -1,4 +1,6 @@
-function [DB_optimized] = optimizeDataBase(DB)
+function [DB_optimized] = optimizeDataBase(DBLab, DBrgb)
+
+
 
 end
 
