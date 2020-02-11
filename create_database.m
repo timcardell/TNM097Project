@@ -5,7 +5,8 @@
     
        DB{i} = imread(['DB (' int2str(i) ').jpg']);
        im_resized{i} = imresize(DB{i}, [25 25], 'bicubic');
-       img_lab{i} = rgb2lab(im_resized{i});
+       %img_lab{i} = rgb2lab(im_resized{i});
+       img_lab{i} = applycform(im_resized{i}, makecform('srgb2lab'));
    end
    
    

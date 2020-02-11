@@ -14,7 +14,9 @@ Img_Landscape = im2double(imread('DB (9).jpg'));
 
 %% resize Image and convert to lab
 Resized_Img = imresize(Img,[4000,4000],'bicubic');
-Lab_Img = rgb2lab(Resized_Img);
+%Lab_Img = rgb2lab(Resized_Img);
+
+Lab_Img = applycform(Resized_Img, makecform('srgb2lab'));
 
 %% optimize database
 
