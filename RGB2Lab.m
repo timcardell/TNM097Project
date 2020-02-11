@@ -65,6 +65,7 @@ L = reshape(YT .* (116 * Y3 - 16.0) + (~YT) .* (903.3 * Y), M, N);
 a = reshape(500 * (fX - fY), M, N);
 b = reshape(200 * (fY - fZ), M, N);
 
+
 if nargout < 2
   L = cat(3,L,a,b);
 end
