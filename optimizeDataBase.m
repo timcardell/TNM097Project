@@ -1,6 +1,6 @@
 
 %input img_lab, im_resized
-function [DB_optimized] = optimizeDataBase(DBLab, meanImageTiles)
+function [DB_optimized,DB_rezised] = optimizeDataBase(DBLab,DBRez, meanImageTiles)
 [length, ~] = size(meanImageTiles);
 
 k = 1;
@@ -13,8 +13,9 @@ for i = 1:length
     
       
       
-      if(diff > 60)
+      if(diff > 50)
           DB_optimized{i} = DBLab{k};
+          DB_rezised{i} = DBRez{k};
           
       end
     end
