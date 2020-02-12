@@ -1,21 +1,15 @@
 function [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized)
 
-
-%% Read in image and databse
-
-
-%Dark Image
-Img_Dark = im2double(imread('DB (72).jpg'));
-%Portrait Image
-Img_Portrait = im2double(imread('DB (247).jpg'));
-%Landscape Image
-Img_Landscape = im2double(imread('DB (9).jpg'));
-
 %% resize Image and convert to lab
 Resized_Img = imresize(Img,[4000,4000],'bicubic');
-%Lab_Img = rgb2lab(Resized_Img);
 
-Lab_Img = applycform(Resized_Img, makecform('srgb2lab'));
+if ismac
+    Lab_Img = applycform(Resized_Img, makecform('srgb2lab'));
+
+elseif ispc
+    Lab_Img = rgb2lab(Resized_Img);
+   
+end
 
 
 
@@ -34,14 +28,6 @@ index = CalcDiff(MeanImage,MeanImageTiles);
 max(index)
 min(index)
 
-
-
-%% optimize database by delteing objects "close" to each other
-
-optimizedDataBase = optimizeDataBase(img_lab, MeanImageTiles);
-
-
-img_lab=optimizedDataBase(~cellfun('isempty',optimizedDataBase));
 
 
 
