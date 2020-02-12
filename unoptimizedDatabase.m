@@ -1,7 +1,7 @@
 function [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized)
 
 %% resize Image and convert to lab
-Resized_Img = imresize(Img,[4000,4000],'bicubic');
+Resized_Img = imresize(Img,[5000,5000],'bicubic');
 
 if ismac
     Lab_Img = applycform(Resized_Img, makecform('srgb2lab'));
@@ -51,21 +51,6 @@ for i = 1:tilewidth:width
     end
 end
  
-
-%% find error in images
-
-%[~,snr] = psnr(recreatedImg,Resized_Img);
-%[recHvs] =HsvFunc(recreatedImg);
-
-
-%%
-
-%E_dither = sqrt((Resized_Img(:,:,1)-recHvs(:,:,1)).^2 +(Resized_Img(:,:,2)-recHvs(:,:,2)).^2 +(Resized_Img(:,:,3)-recHvs(:,:,3)).^2);
-
-%mean = (1/(width*height))*sum(sum(E_dither));
-
-
-
 
 
 
