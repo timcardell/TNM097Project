@@ -1,4 +1,4 @@
-function [recreatedImg] = optimizedDatabase(Img, img_lab, im_resized)
+function [recreatedImg] = optimizedDatabase1(Img, img_lab, im_resized)
 %% resize Image and convert to lab
 Resized_Img = imresize(Img,[4000,4000],'bicubic');
 
@@ -23,14 +23,15 @@ end
 
 %% optimize database by delteing objects "close" to each other
 
-    [optimizedDataBaseLab,optimizedDataBaseRGB] = optimizeDataBase(img_lab,im_resized ,MeanImageTiles);
+    MeanImage = MeanFunc(Lab_Img,tilewidth);
+    [optimizedDataBaseLab,optimizedDataBaseRGB] = optimizeDataBase(meanImage, img_lab,im_resized ,MeanImageTiles);
 
 
     img_lab=optimizedDataBaseLab(~cellfun('isempty',optimizedDataBaseLab));
     im_resized=optimizedDataBaseRGB(~cellfun('isempty',optimizedDataBaseRGB));
     size(im_resized)
     DatabaseArray = cell2mat(img_lab); 
-    MeanImage = MeanFunc(Lab_Img,tilewidth);
+    
     MeanImageTiles = MeanFunc(DatabaseArray,tilewidth);
 
 
@@ -80,4 +81,5 @@ end
 
 
 end
+
 

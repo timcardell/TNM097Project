@@ -34,12 +34,21 @@ imshow(recreatedImgLandscape)
 %% 2 optimize database if the mean diff is close
 
 load('database.mat');
+
+%% 2.1
 Img = imread('DB (276).jpg');
 Img = im2double(Img);
 
 [recreatedImg] = optimizedDatabase(Img, img_lab, im_resized);
  imshow(recreatedImg)
-%% 2.1
+
+%% 2.2 optimize original image
+
+Img = imread('DB (286).jpg');
+Img = im2double(Img);
+
+[recreatedImg] = optimizedDatabase1(Img, img_lab, im_resized);
+ imshow(recreatedImg)
 
 
 %% 3 find error in images
