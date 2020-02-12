@@ -2,11 +2,11 @@
 
 %% Read in image and databse
 load('database.mat');
-Img = imread('DB (72).jpg');
+Img = imread('DB (279).jpg');
 Img = im2double(Img);
 
 %Dark Image
-Img_Dark = im2double(imread('DB (72).jpg'));
+Img_Dark = im2double(imread('DB (239).jpg'));
 %Portrait Image
 Img_Portrait = im2double(imread('DB (247).jpg'));
 %Landscape Image
@@ -32,17 +32,14 @@ Lab_Img = applycform(Resized_Img, makecform('srgb2lab'));
 %% Compare mean images
 index = CalcDiff(MeanImage,MeanImageTiles);
 
-max(index)
-min(index)
-
-
-
 %% optimize database by delteing objects "close" to each other
 
 optimizedDataBase = optimizeDataBase(img_lab, MeanImageTiles);
 
 
-img_lab=optimizedDataBase(~cellfun('isempty',optimizedDataBase))
+for i = 1:1:279
+end
+optimizedDataBase{8}
 
 
 

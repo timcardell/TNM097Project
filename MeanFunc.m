@@ -18,6 +18,6 @@ function [meanIntensity] = MeanFunc(inImg,tileWidth)
               
         end
      
-meanIntensity
+
 end
 

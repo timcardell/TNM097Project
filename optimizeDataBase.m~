@@ -4,13 +4,13 @@ function [DB_optimized] = optimizeDataBase(DBLab, meanImageTiles)
 [length, ~] = size(meanImageTiles);
 
 k = 1;
-DB_optimized=[];
  
-for i = 1:length
-    for j = 1:length
+for i = 1:1:length
+    for j = 1:1:length
       
       diff = abs(meanImageTiles(i) - meanImageTiles(j));
-    
+     one= i
+     two= j
       
       
       if(diff > 60)
@@ -22,5 +22,3 @@ for i = 1:length
     
 end
 
-
-end
