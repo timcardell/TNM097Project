@@ -1,6 +1,6 @@
 function [recreatedImg] = optimizedDatabase(Img, img_lab, im_resized)
 %% resize Image and convert to lab
-Resized_Img = imresize(Img,[4000,4000],'bicubic');
+Resized_Img = imresize(Img,[5000,5000],'bicubic');
 Lab_Img = rgb2lab(Resized_Img);
 
 %Lab_Img = applycform(Resized_Img, makecform('srgb2lab'));
