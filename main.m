@@ -3,7 +3,7 @@
 %% 1 unoptimized 
 
 load('database.mat');
-Img = imread('DB (72).jpg');
+Img = imread('DB (277).jpg');
 Img = im2double(Img);
 
 [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized);
@@ -11,7 +11,7 @@ Img = im2double(Img);
 %% 1.1 read different types of images 
  
 %% 1.1.1 Dark Image
-Img_Dark = im2double(imread('DB (72).jpg'));
+Img_Dark = im2double(imread('DB (277).jpg'));
 
 [recreatedImgDark] = unoptimizedDatabase(Img_Dark, img_lab, im_resized);
 imshow(recreatedImgDark)
