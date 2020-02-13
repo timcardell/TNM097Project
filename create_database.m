@@ -1,7 +1,7 @@
 %% create database of images
 
 
-   for i= 1:292 %loop through all images, reaize and convert to lab
+   for i= 1:300 %loop through all images, reaize and convert to lab
 
        DB{i} = imread(['DB (' int2str(i) ').jpg']);
        im_resized{i} = imresize(DB{i}, [25 25], 'bicubic');
