@@ -3,7 +3,7 @@
 %% 1 unoptimized 
 
 load('database.mat');
-Img = imread('DB (287).jpg');
+Img = imread('DB (256).jpg');
 Img = im2double(Img);
 
 [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized);
@@ -36,7 +36,7 @@ imshow(recreatedImgLandscape)
 load('database.mat');
 
 %% 2.1
-Img = imread('DB (276).jpg');
+Img = imread('DB (290).jpg');
 Img = im2double(Img);
 
 [recreatedImg] = optimizedDatabase(Img, img_lab, im_resized);
