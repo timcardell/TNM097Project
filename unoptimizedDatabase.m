@@ -3,14 +3,14 @@ function [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized)
 %% resize Image and convert to lab
 [heightResizedIm, widthResizedIm, ~] = size(Img)
 
-if( heightResizedIm <999 && widthResizedIm <999)
+if(heightResizedIm <999 && widthResizedIm <999)
     
     
     heightFact = heightResizedIm/1000;
     widthFact = widthResizedIm/1000;
  
 
-elseif( heightResizedIm > 999 && widthResizedIm > 999)
+elseif(heightResizedIm > 999 && widthResizedIm > 999)
     
     
     heightFact = heightResizedIm/10000;
