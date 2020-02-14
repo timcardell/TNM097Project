@@ -4,12 +4,11 @@
 
 load('database.mat');
 
-Img = imread('DB (271).jpg');
+Img = imread('DB (285).jpg');
 
 [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized);
  imshow(recreatedImg)
- figure
- imshow(Img)
+
 %% 1.1 read different types of images
 
 %% 1.1.1 Dark Image

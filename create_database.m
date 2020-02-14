@@ -4,7 +4,7 @@
    for i= 1:308 %loop through all images, reaize and convert to lab
 
        DB{i} = imread(['DB (' int2str(i) ').jpg']);
-       im_resized{i} = imresize(DB{i}, [25 25], 'bicubic');
+       im_resized{i} = imresize(DB{i}, [20 20], 'bicubic');
 
         if ismac
          img_lab{i} = applycform(im_resized{i}, makecform('srgb2lab'));
