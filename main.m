@@ -4,7 +4,7 @@
 
 load('database.mat');
 
-Img = imread('DB (285).jpg');
+Img = imread('DB (72).jpg');
 
 [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized);
  imshow(recreatedImg)

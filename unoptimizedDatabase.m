@@ -13,6 +13,18 @@ if( heightResizedIm <999 && widthResizedIm <999)
 elseif( heightResizedIm > 999 && widthResizedIm > 999)
     
     
+    
+    heightFact = heightResizedIm/10000;
+    widthFact = widthResizedIm/10000;
+    
+    elseif( heightResizedIm < 999 && widthResizedIm > 999)
+    
+    
+    heightFact = heightResizedIm/10000;
+    widthFact = widthResizedIm/10000;
+    elseif( heightResizedIm > 999 && widthResizedIm < 999)
+    
+    
     heightFact = heightResizedIm/10000;
     widthFact = widthResizedIm/10000;
 end
