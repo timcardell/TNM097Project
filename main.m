@@ -1,17 +1,17 @@
 
 
-%% 1 unoptimized 
+%% 1 unoptimized
 
 load('database.mat');
+
 Img = imread('DB (271).jpg');
-Img = im2double(Img);
 
 [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized);
  imshow(recreatedImg)
  figure
  imshow(Img)
-%% 1.1 read different types of images 
- 
+%% 1.1 read different types of images
+
 %% 1.1.1 Dark Image
 Img_Dark = im2double(imread('DB (276).jpg'));
 
@@ -61,11 +61,3 @@ Img = im2double(Img);
 E_dither = sqrt((Resized_Img(:,:,1)-recHvs(:,:,1)).^2 +(Resized_Img(:,:,2)-recHvs(:,:,2)).^2 +(Resized_Img(:,:,3)-recHvs(:,:,3)).^2);
 
 mean = (1/(width*height))*sum(sum(E_dither));
-
-
-
-
-
-
- 
-

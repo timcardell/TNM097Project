@@ -1,8 +1,24 @@
 function [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized)
 
 %% resize Image and convert to lab
-Resized_Img = imresize(Img,[5000,5000],'bicubic');
+[heightResizedIm, widthResizedIm, ~] = size(Img)
 
+if( heightResizedIm <999 && widthResizedIm <999)
+    
+    
+    heightFact = heightResizedIm/1000
+    widthFact = widthResizedIm/1000
+ 
+
+elseif( heightResizedIm > 999 && widthResizedIm > 999)
+    
+    
+    heightFact = heightResizedIm/10000;
+    widthFact = widthResizedIm/10000;
+end
+
+Resized_Img = imresize(Img,[roundn(8000*heightFact, 2),roundn(8000*widthFact, 2)],'bicubic');
+size(Resized_Img)
 if ismac
     Lab_Img = applycform(Resized_Img, makecform('srgb2lab'));
 
