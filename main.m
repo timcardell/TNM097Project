@@ -5,7 +5,7 @@
 load('database.mat');
 
 %%
-Img = imread('DB (252).jpg');
+Img = imread('DB (269).jpg');
 
 [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized, tileSize);
 imshow(recreatedImg)
@@ -33,31 +33,41 @@ imshow(recreatedImgLandscape)
 
 %% 2 optimize database if the mean diff is close
 
-load('database.mat');
 
-%% 2.1
-load('database.mat');
-Img = imread('DB (286).jpg');
-%Img = im2double(Img);
 
-recreatedImg = optimizedDatabase(Img, img_lab, im_resized);
-imshow(recreatedImg)
+%% 2.1 optimization 1 only depending on image database, run this once 
+optimization(img_lab, im_resized)
 
-%% 2.2 optimize original image
-load('database.mat');
-Img = imread('DB (269).jpg');
-%Img = im2double(Img);
+%% run optmization function first, then run this section
+load('databaseOpt.mat');
 
-[recreatedImg] = optimizedDatabase1(Img, img_lab, im_resized);
- imshow(recreatedImg)
+Img_opt1 = imread('DB (276).jpg');
 
+[recreatedImgOpt1] = unoptimizedDatabase(Img_opt1, optLab, optRgb, tileSize);
+imshow(recreatedImgOpt1)
+
+
+%% 2.2 optimization 2 depending on in image, run once for chosen image
+Img = imread('DB (276).jpg');
+
+optimizationImage(Img, img_lab, im_resized, tileSize)
+%% run this after prev section
+
+
+load('databaseOptIm.mat');
+
+
+[recreatedImgOpt2] = unoptimizedDatabase(Img, optLabImage, optRgbImage, tileSize);
+imshow(recreatedImgOpt2)
 
 %% 3 find error in images
 
-% [~,snr] = psnr(recreatedImg,Resized_Img);
+ [~,snr] = psnr(recreatedImg,Resized_Img);
 % [recHvs] =HsvFunc(recreatedImg);
 % 
 % 
 % E_dither = sqrt((Resized_Img(:,:,1)-recHvs(:,:,1)).^2 +(Resized_Img(:,:,2)-recHvs(:,:,2)).^2 +(Resized_Img(:,:,3)-recHvs(:,:,3)).^2);
 % 
 % mean = (1/(width*height))*sum(sum(E_dither));
+
+

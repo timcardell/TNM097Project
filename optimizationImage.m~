@@ -1,8 +1,22 @@
 
 %input img_lab, im_resized
-function [DB_optimized,DB_rezised] = optimizeDataBase2func(meanImage, DBLab,DBRez, meanImageTiles)
+function [DB_optimized,DB_rezised] = optimizationImage(Lab_Img, DBLab,DBRez, t)
+
+%mean value of tiles
+DatabaseArray = cell2mat(img_lab);
+[tilewidth,~,~] = size(DatabaseArray);
+meanImageTiles = MeanFunc(DatabaseArray,tilewidth);
+
+% mean value in image
+meanImage = MeanFunc(Lab_Img,tilewidth);
+
 [length, ~] = size(meanImageTiles);
 [lengthMeanImage, ~] = size(meanImage);
+
+
+
+
+
 
 
 DB_optimized=[];
