@@ -4,31 +4,31 @@
 
 load('database.mat');
 
-
-Img = imread('DB (72).jpg');
+%%
+Img = imread('DB (252).jpg');
 
 [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized, tileSize);
- imshow(recreatedImg)
+imshow(recreatedImg)
 
 %% 1.1 read different types of images
 
 %% 1.1.1 Dark Image
-Img_Dark = im2double(imread('DB (276).jpg'));
+Img_Dark = imread('DB (276).jpg');
 
-[recreatedImgDark] = unoptimizedDatabase(Img_Dark, img_lab, im_resized);
+[recreatedImgDark] = unoptimizedDatabase(Img_Dark, img_lab, im_resized, tileSize);
 imshow(recreatedImgDark)
 
 
 %%  1.1.2 Portrait Image
-Img_Portrait = im2double(imread('DB (247).jpg'));
+Img_Portrait = imread('DB (269).jpg');
 
-[recreatedImgPortrait] = unoptimizedDatabase(Img_Portrait, img_lab, im_resized);
+[recreatedImgPortrait] = unoptimizedDatabase(Img_Portrait, img_lab, im_resized, tileSize);
 imshow(recreatedImgPortrait)
 
 %% 1.1.3 Landscape Image
-Img_Landscape = im2double(imread('DB (9).jpg'));
+Img_Landscape = imread('DB (9).jpg');
 
-[recreatedImgLandscape] = unoptimizedDatabase(Img_Landscape, img_lab, im_resized);
+[recreatedImgLandscape] = unoptimizedDatabase(Img_Landscape, img_lab, im_resized, tileSize);
 imshow(recreatedImgLandscape)
 
 %% 2 optimize database if the mean diff is close
@@ -38,15 +38,15 @@ load('database.mat');
 %% 2.1
 load('database.mat');
 Img = imread('DB (286).jpg');
-Img = im2double(Img);
+%Img = im2double(Img);
 
 recreatedImg = optimizedDatabase(Img, img_lab, im_resized);
- imshow(recreatedImg)
+imshow(recreatedImg)
 
 %% 2.2 optimize original image
 load('database.mat');
-Img = imread('DB (84).jpg');
-Img = im2double(Img);
+Img = imread('DB (269).jpg');
+%Img = im2double(Img);
 
 [recreatedImg] = optimizedDatabase1(Img, img_lab, im_resized);
  imshow(recreatedImg)

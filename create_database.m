@@ -1,7 +1,7 @@
 %% create database of images
 
 
-   tileSize = 37;
+   tileSize = 25;
    for i= 1:310 %loop through all images, reaize and convert to lab
 
 

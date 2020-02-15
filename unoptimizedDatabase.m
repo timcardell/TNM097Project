@@ -7,17 +7,17 @@ function [recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized, tileSize
 scale_factor = heightResizedIm/widthResizedIm
 
 if(scale_factor > 1.5)
-    Resized_Img = imresize(Img,[(round(4000/tileSize)*tileSize),round(4000/scale_factor/tileSize)*tileSize],'bicubic');
+    Resized_Img = imresize(Img,[(round(4000/tileSize)*tileSize),round((4000/scale_factor)/tileSize)*tileSize],'bicubic');
 
     
 elseif(scale_factor < 1.5 && scale_factor > 1)
-    Resized_Img = imresize(Img,[(round(4000/tileSize)*tileSize),round(4000/scale_factor/tileSize)*tileSize],'bicubic');
+    Resized_Img = imresize(Img,[(round(4000/tileSize)*tileSize),round((4000/scale_factor)/tileSize)*tileSize],'bicubic');
 
 elseif(scale_factor < 1 && scale_factor > 0.49)
-    Resized_Img = imresize(Img,[(round(3000/tileSize)*tileSize),round(3000/scale_factor/tileSize)*tileSize],'bicubic');
+    Resized_Img = imresize(Img,[(round(3000/tileSize)*tileSize),round((3000/scale_factor)/tileSize)*tileSize],'bicubic');
 
 else
-     Resized_Img = imresize(Img,[(round(4000/tileSize)*tileSize),round(4000/scale_factor/tileSize)*tileSize],'bicubic');
+     Resized_Img = imresize(Img,[(round(4000/tileSize)*tileSize),round((4000/scale_factor)/tileSize)*tileSize],'bicubic');
 end
     
 
