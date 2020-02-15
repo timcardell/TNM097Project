@@ -1,17 +1,17 @@
 
 
-%% 1 unoptimized 
+%% 1 unoptimized
 
 load('database.mat');
-Img = imread('DB (162).jpg');
-Img = im2double(Img);
 
-[recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized);
+
+Img = imread('DB (292).jpg');
+
+[recreatedImg] = unoptimizedDatabase(Img, img_lab, im_resized, tileSize);
  imshow(recreatedImg)
- figure
- imshow(Img)
-%% 1.1 read different types of images 
- 
+
+%% 1.1 read different types of images
+
 %% 1.1.1 Dark Image
 Img_Dark = im2double(imread('DB (276).jpg'));
 
@@ -36,15 +36,16 @@ imshow(recreatedImgLandscape)
 load('database.mat');
 
 %% 2.1
-Img = imread('DB (290).jpg');
+load('database.mat');
+Img = imread('DB (286).jpg');
 Img = im2double(Img);
 
-[recreatedImg] = optimizedDatabase(Img, img_lab, im_resized);
+recreatedImg = optimizedDatabase(Img, img_lab, im_resized);
  imshow(recreatedImg)
 
 %% 2.2 optimize original image
-
-Img = imread('DB (286).jpg');
+load('database.mat');
+Img = imread('DB (84).jpg');
 Img = im2double(Img);
 
 [recreatedImg] = optimizedDatabase1(Img, img_lab, im_resized);
@@ -53,18 +54,10 @@ Img = im2double(Img);
 
 %% 3 find error in images
 
-[~,snr] = psnr(recreatedImg,Resized_Img);
-[recHvs] =HsvFunc(recreatedImg);
-
-
-E_dither = sqrt((Resized_Img(:,:,1)-recHvs(:,:,1)).^2 +(Resized_Img(:,:,2)-recHvs(:,:,2)).^2 +(Resized_Img(:,:,3)-recHvs(:,:,3)).^2);
-
-mean = (1/(width*height))*sum(sum(E_dither));
-
-
-
-
-
-
- 
-
+% [~,snr] = psnr(recreatedImg,Resized_Img);
+% [recHvs] =HsvFunc(recreatedImg);
+% 
+% 
+% E_dither = sqrt((Resized_Img(:,:,1)-recHvs(:,:,1)).^2 +(Resized_Img(:,:,2)-recHvs(:,:,2)).^2 +(Resized_Img(:,:,3)-recHvs(:,:,3)).^2);
+% 
+% mean = (1/(width*height))*sum(sum(E_dither));
