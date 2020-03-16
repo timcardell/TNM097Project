@@ -13,14 +13,14 @@ imshow(recreatedImg)
 %% 1.1 read different types of images
 
 %% 1.1.1 Dark Image
-Img_Dark = imread('DB (276).jpg');
+Img_Dark = imread('DB (269).jpg');
 
 [recreatedImgDark] = unoptimizedDatabase(Img_Dark, img_lab, im_resized, tileSize);
 imshow(recreatedImgDark)
 
 
 %%  1.1.2 Portrait Image
-Img_Portrait = imread('DB (269).jpg');
+Img_Portrait = imread('DB (244).jpg');
 
 [recreatedImgPortrait] = unoptimizedDatabase(Img_Portrait, img_lab, im_resized, tileSize);
 imshow(recreatedImgPortrait)
@@ -35,24 +35,24 @@ imshow(recreatedImgLandscape)
 
 
 
-%% 2.1 optimization 1 only depending on image database, run this once 
-optimization(img_lab, im_resized)
+%% 2.1 optimization 1 only depending on image database, dont run, we didnt submit image data base
+%optimization(img_lab, im_resized)
 
-%% run optmization function first, then run this section
+%% run for optimization 1
 load('databaseOpt.mat');
 
-Img_opt1 = imread('DB (276).jpg');
+Img_opt1 = imread('DB (269).jpg');
 
 [recreatedImgOpt1] = unoptimizedDatabase(Img_opt1, optLab, optRgb, tileSize);
 imshow(recreatedImgOpt1)
 
 
-%% 2.2 optimization 2 depending on in image, run once for chosen image
-Img = imread('DB (276).jpg');
+%% 2.2 optimization 2 depending on in image, run once for chosen image(dont run optimizationImage)
 
-optimizationImage(Img, img_lab, im_resized, tileSize)
+
+%optimizationImage(Img, img_lab, im_resized, tileSize)
 %% run this after prev section
-
+Img = imread('DB (269).jpg');
 
 load('databaseOptIm.mat');
 
@@ -62,7 +62,7 @@ imshow(recreatedImgOpt2)
 
 %% 3 find error in images
 
- [~,snr] = psnr(recreatedImg,Resized_Img);
+% [~,snr] = psnr(recreatedImg,Resized_Img);
 % [recHvs] =HsvFunc(recreatedImg);
 % 
 % 
